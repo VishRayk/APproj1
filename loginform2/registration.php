@@ -21,10 +21,7 @@ if (isset($_SESSION["user"])) {
     </style>
 </head>
 <body>
-    <div class="bgAnimation" id="bgAnimation">
-        <div class="backgroundAmim">
-        </div>
-    </div>
+   
     <div class="container">
         <?php
         if (isset($_POST["submit"])) {
@@ -182,7 +179,7 @@ if (isset($_SESSION["user"])) {
               placeholder="password"
               name="password"
             />
-            <button class="password-button">show</button>
+    
           </label>
           <label>
             <div class="fas fa-lock"></div>
@@ -193,7 +190,7 @@ if (isset($_SESSION["user"])) {
               placeholder="password"
               name="repeat_password"
             />
-            <button class="password-button">show</button>
+            
           </label>
             <input type="submit" value="Register" name="submit" class="login-button">
             </form>

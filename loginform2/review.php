@@ -1,14 +1,16 @@
 <?php
+
 session_start();
+if (!isset($_SESSION["user"])) {
+   header("Location: login.php");
+}
+
 require 'database.php';
 
 // Ensure the user is logged in before allowing them to submit a review
-if (!isset($_SESSION['username'])) {
-    header('Location: login.php');  // Redirect to login page if not logged in
-    exit;
-}
 
-$user_name = $_SESSION['fullname'];  // Logged-in user's name
+
+$user_name = $_SESSION["user"];  // Logged-in user's name
 
 // Fetch existing reviews
 $result = $conn->query("SELECT * FROM reviews ORDER BY created_at DESC");
@@ -42,12 +44,15 @@ $conn->close();
 <html lang="en">
 <head>
     <title>Reviews</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="review.css">
 </head>
 <body>
+    <div class="container">
+        <a href="index.html">Game Galaxy</a>
+        <a href="logout.php" class="btn btn-warning">Logout</a>
+    </div>
     <h1>Game Reviews</h1>
-    
-    <!-- Display existing reviews -->
+
     <?php if ($result->num_rows > 0): ?>
         <div class="review-list">
             <?php while ($row = $result->fetch_assoc()): ?>
@@ -71,7 +76,7 @@ $conn->close();
         <div class="success"><?php echo htmlspecialchars($success); ?></div>
     <?php endif; ?>
     
-    <form action="review_page.php" method="POST">
+    <form action="review.php" method="POST">
         <div>
             <label for="review_text">Your Review:</label>
             <textarea name="review_text" id="review_text" required></textarea>

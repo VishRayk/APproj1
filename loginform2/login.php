@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION["user"])) {
-   header("Location: index.php");
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +18,10 @@ if (isset($_SESSION["user"])) {
 <body>
     <div class="container">
         <?php
+       
+        session_start();
+        
+       
         if (isset($_POST["login"])) {
            $email = $_POST["email"];
            $password = $_POST["password"];
@@ -33,11 +32,11 @@ if (isset($_SESSION["user"])) {
             if ($user) {
                 if (password_verify($password, $user["password"])) {
                     session_start();
-                    $_SESSION["user"] = "yes";
+                    $_SESSION["user"] = $user['email'];
                     header("Location: index.html");
                     die();
                 }else{
-                    echo "<div class='alert alert-danger'>Password does not match</div>";
+                    echo "<div class='alert alert-danger'> <br><br>Password does not match</div>";
                 }
             }else{
                 echo "<div class='alert alert-danger'> <br><br>User not found</div>";
@@ -139,7 +138,7 @@ if (isset($_SESSION["user"])) {
               placeholder="password"
               name="password"
             />
-            <button class="password-button">show</button>
+         
           </label>
           
             <input type="submit" value="Login" name="login" class="login-button">
