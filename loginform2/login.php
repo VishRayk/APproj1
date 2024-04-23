@@ -32,7 +32,8 @@
             if ($user) {
                 if (password_verify($password, $user["password"])) {
                     session_start();
-                    $_SESSION["user"] = $user['email'];
+                    $_SESSION["user"] = $user['full_name'];
+                    
                     header("Location: index.html");
                     die();
                 }else{
@@ -117,7 +118,7 @@
 
       <!-- Form Start -->
       <div class="tengah">
-        <form action="login.php"  method="post" >
+        <form  onsubmit="return validateForm()" action="login.php"   method="post"  >
         <div class="login">
           <label>
             <div class="fas fa-user"></div>
@@ -127,6 +128,7 @@
               autocomplete="on"
               placeholder="Email"
               name="email"
+              id="email"
             />
           </label>
           <label>
@@ -137,12 +139,14 @@
               autocomplete="off"
               placeholder="password"
               name="password"
+              id="password"
             />
          
           </label>
           
             <input type="submit" value="Login" name="login" class="login-button">
             </form>
+            <div id="errorMessages" style="color: white;"></div>
       </div>
      </div>
       <!-- Form End -->
@@ -157,6 +161,7 @@
     </div>
     <!-- Footer End -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
+    <script src="form.js"></script>
 </body>
 <script src="app.js"></script>
 </html>

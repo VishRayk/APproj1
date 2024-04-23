@@ -7,9 +7,6 @@ if (!isset($_SESSION["user"])) {
 
 require 'database.php';
 
-// Ensure the user is logged in before allowing them to submit a review
-
-
 $user_name = $_SESSION["user"];  // Logged-in user's name
 
 // Fetch existing reviews
@@ -47,8 +44,8 @@ $conn->close();
     <link rel="stylesheet" href="review.css">
 </head>
 <body>
-    <div class="container">
-        <a href="index.html">Game Galaxy</a>
+    <div class="nav">
+        <a href="index.html" id="logo">Game Galaxy</a>
         <a href="logout.php" class="btn btn-warning">Logout</a>
     </div>
     <h1>Game Reviews</h1>
