@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://shorturl.at/auIO4" rel="stylesheet">
+    
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">GameGalaxy</h2>
+        <nav class="navigation">
+            <a href="#" id="active">Home</a>
+            <a href="review.php">Reviews</a>
+            <a href="#" onclick="scrollToAboutUs()">About Us</a>
+            <a href="logout.php" class="btn btn-warning">Logout</a>
+        </nav>
+    </header>
+    <section class="parallax">
+        <img src="images/hill1.png" id="hill1">
+        <img src="images/hill2.png" id="hill2">
+        <img src="images/hill3.png" id="hill3">
+        <img src="images/hill4.png" id="hill4">
+        <img src="images/hill5.png" id="hill5">
+        <img src="images/tree.png" id="tree">
+        <h2 id="text"></h2>
+        <img src="images/leaf.png" id="leaf">
+        <img src="images/plant.png" id="plant">
+    </section>
+    <div class="games1">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search games..." autocomplete="off"/>
+            <button id="searchButton"  onclick="redirectSearch()">Search</button>
+            <div id="searchSuggestions"></div>
+        </div>
+        <div class="games">
+            <div class="game" onclick="showButtons(this)">
+              <img src="images/snakegame.png" alt="Game 1" />
+              <h3>Snake</h3>
+              <p>Description of Snake game</p>
+              <div class="overlay">
+                <a href='Web-Games-Snake-Game\index.html'><button class="play-button" style="display: none;" id="snakeplay">Play</button></a>
+                <button class="rules-button" style="display: none;" onclick="showRules('snake')">Rules</button>
+              </div>
+            </div>
+            <div class="game" onclick="showButtons(this)">
+                <img src="images/rockpaperscissor.png" alt="Game 2"/>
+                <h3>Rock Paper Scissors</h3>
+                <p>Description of Rock Paper Scissors game</p>
+                <div class="overlay">
+                  <a href='RPS GAME\index.html'><button class="play-button" style="display: none;" >Play</button></a>
+                  <button class="rules-button" style="display: none;" onclick="showRules('rock-paper-scissors')">Rules</button>
+                </div>
+            </div>
+            <div class="game" onclick="showButtons(this)">
+                <img src="images/tictactoe.png" alt="Game 3" />
+                <h3>Tic Tac Toe</h3>
+                <p>Description of Tic Tac Toe game</p>
+                <div class="overlay">
+                  <a href="Web-Games-Tic-Tac-Toe\index.html"><button class="play-button" style="display: none;">Play</button></a>
+                  <button class="rules-button" style="display: none;" onclick="showRules('tic-tac-toe')">Rules</button>
+                </div>
+              </div>
+              <div class="game" onclick="showButtons(this)">
+                <img src="images/dino.jpeg" alt="Game 4" />
+                <h3>Chrome Dinosaur</h3>
+                <p>Description of Dinosaur game</p>
+                <div class="overlay">
+                  <a href="Dino game\index.html"><button class="play-button" style="display: none;">Play</button></a>
+                  <button class="rules-button" style="display: none;" onclick="showRules('chrome-dino-')">Rules</button>
+                </div>
+              </div>
+              <div class="game" onclick="showButtons(this)">
+                <img src="images/mazegame.jpeg" alt="Game 5" />
+                <h3>Maze Game</h3>
+                <p>Description of Maze game</p>
+                <div class="overlay">
+                  <a href="Web-Games-Maze\index.html"><button class="play-button" style="display: none;">Play</button></a>
+                  <button class="rules-button" style="display: none;" onclick="showRules('maze-game-')">Rules</button>
+                </div>
+              </div>
+              <div class="game" onclick="showButtons(this)">
+                <img src="images/wordgame.jpeg" alt="Game 5" />
+                <h3>Word Scramble</h3>
+                <p>Description of Word Scramble</p>
+                <div class="overlay">
+                 <a href="word_scramble-main\index.html"> <button class="play-button" style="display: none;">Play</button></a>
+                  <button class="rules-button" style="display: none;" onclick="showRules('snake')">Rules</button>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <!-- Close button -->
+          <span class="close" onclick="closeModal()">&times;</span>
+          <!-- Rules content -->
+          <h2>Rules</h2>
+          <p id="rules-content"></p>
+        </div>
+      </div>
+    <div class="about-us">
+       
+        <div class="responsive-container-block outer-container">
+            <div class="responsive-container-block inner-container">
+              <p class="text-blk section-head-text">
+                Meet Our Team
+              </p>
+              <p class="text-blk section-subhead-text">
+                Great Teams Make Great Games 
+              </p>
+
+              <div class="responsive-container-block">
+                
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                  <div class="team-card">
+                    <div class="img-wrapper">
+                      <img class="team-img" src="hitansh.jpg" height="276" width="267">
+                    </div>
+                    <p class="text-blk name">
+                      Hitansh Jain
+                    </p>
+                    <div class="social-media-links">
+                      <a href="https://www.linkedin.com/in/ashutosh-singh-rajput-350b33291/" target="_blank">
+                        <img src="images/linkedin.png" height="24px" width="24px">
+                      </a>
+                      <a href="https://github.com/iiioooiso" target="_blank">
+                        <img src="images/github.png" height="24px" width="24px">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                  <div class="team-card">
+                    <div class="img-wrapper">
+                      <img class="team-img" src="utkarsh.jpg">
+                    </div>
+                    <p class="text-blk name">
+                      Utkarsh Pise
+                    </p>
+                    <div class="social-media-links">
+                      <a href="https://www.linkedin.com/in/arko-bera-682599239/" target="_blank">
+                        <img src="images/linkedin.png" height="24px" width="24px">
+                      </a>
+                      <a href="" target="_blank">
+                        <img src="images/github.png" height="24px" width="24px">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                
+
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                  <div class="team-card">
+                    <div class="img-wrapper">
+                      <img class="team-img" src="IMG_20231118_053324865.jpg">
+                    </div>
+                    <p class="text-blk name">
+                      Vishal Raykhere
+                    </p>
+                    <div class="social-media-links">
+                      <a href="" target="_blank">
+                        <img src="images/linkedin.png" height="24px" width="24px">
+                      </a>
+                      <a href="" target="_blank">
+                        <img src="images/github.png" height="24px" width="24px">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+</body>
+<script src="script.js"></script>
+
+</html>

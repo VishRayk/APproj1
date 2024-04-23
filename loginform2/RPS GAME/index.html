@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Rock Paper Scissors</h1>
+      </div>
+      <div class="items">
+        <div class="rocky">
+          <button
+            id="rock-img"
+            onclick="
+                playGame('rock');
+              "
+          >
+            <img
+              src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2pvYjk1OS1lbGVtZW50LWItMDEzNi1wXzEucG5n.png"
+              width="400px"
+              height="400px"
+            />
+          </button>
+        </div>
+        <div class="paper">
+          <button
+            onclick="
+                playGame('paper');
+              "
+          >
+            <img
+              src="https://as1.ftcdn.net/v2/jpg/04/25/86/36/1000_F_425863611_5Peju5bLE8DT3XWN1iZjpjyn0UAvNZbJ.jpg"
+              width="400px"
+              height="400px"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="scissor">
+          <button
+            onclick="
+                playGame('scissors');
+              "
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Emojione_270C.svg/768px-Emojione_270C.svg.png"
+              width="400px"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+      <div class="update">
+        <p class="js-pick"></p>
+        <p class="js-score"></p>
+      </div>
+      <div class="final">
+        <button
+          onclick="
+                resetscore()
+              "
+        >
+          Reset Score
+        </button>
+      </div>
+    </div>
+
+    <br />
+  </body>
+</html>

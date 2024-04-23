@@ -1,0 +1,103 @@
+/* Basic reset and global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e; /* deep charcoal background */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Game board styling */
+#game-board {
+    width: 80vmin;
+    height: 80vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 15px 5px rgba(0, 255, 0, 0.75);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    padding: 2px; /* Adds space between the grid and the outer border */
+}
+
+/* Styling for the snake */
+.snake {
+    background: linear-gradient(145deg, #76ff03, #64dd17);
+    border: none;
+    box-shadow: 0px 0px 5px #76ff03;
+}
+
+/* Styling for the food */
+.food {
+    background: linear-gradient(145deg, #ff1744, #f50057);
+    border-radius: 50%; /* Circle shape */
+    box-shadow: 0px 0px 10px #ff1744;
+}
+
+/* Score display styling */
+.score {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Subtle animations and effects */
+@keyframes snake-move {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.snake {
+    animation: snake-move 1s infinite;
+}
+
+@keyframes food-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.food {
+    animation: food-pulse 2s infinite;
+}
+
+/* Score display styling */
+.score {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+    z-index: 10; /* Ensure it stays on top */
+}
+
+#current-score {
+    transform: translateX(-120%); /* Adjust to fit on the left */
+}
+
+#high-score {
+    transform: translateX(20%); /* Adjust to fit on the right */
+}
