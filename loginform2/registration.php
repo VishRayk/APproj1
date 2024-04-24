@@ -74,8 +74,7 @@ if (isset($_SESSION["user"])) {
 
         }
         ?>
-      <div class="ear ear--left"></div>
-      <div class="ear ear--right"></div>
+      
       <div class="face">
         <div class="eyes">
           <div class="eye eye--left">

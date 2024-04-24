@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
   console.log(value);
 })
 
-// List of available game names
+
 const games = [
   'Snake',
   'Rock Paper Scissors',
@@ -27,16 +27,16 @@ const games = [
   'Word Scramble'
 ];
 
-// Function to update search suggestions based on input value
+
 function updateSearchSuggestions(input) {
   const searchSuggestions = document.getElementById('searchSuggestions');
-  // Clear previous suggestions
+
   searchSuggestions.innerHTML = '';
 
-  // Filter games based on input value
+  
   const filteredGames = games.filter(game => game.toLowerCase().includes(input.toLowerCase()));
 
-  // Display up to 5 matching suggestions
+
   for (let i = 0; i < Math.min(filteredGames.length, 5); i++) {
     const suggestion = document.createElement('div');
     suggestion.textContent = filteredGames[i];
@@ -44,14 +44,14 @@ function updateSearchSuggestions(input) {
     suggestion.addEventListener('click', () => {
       document.getElementById('searchInput').value = filteredGames[i];
       searchSuggestions.innerHTML = '';
-      // Redirect to the appropriate URL for the selected game
+   
       redirectToGame(filteredGames[i]);
     });
     searchSuggestions.appendChild(suggestion);
   }
 }
 
-// Function to redirect to the appropriate URL for the selected game
+
 function redirectToGame(game) {
   const gameURLs = {
     'Snake': 'https://snake-iota-nine.vercel.app/',
@@ -62,26 +62,26 @@ function redirectToGame(game) {
     'Word Scramble': 'https://word-scramble-url.com/'
   };
 
-  // Check if the game is present in the URLs object
+
   if (gameURLs.hasOwnProperty(game)) {
-    // Redirect to the game URL
+  
     window.location.href = gameURLs[game];
   } else {
     console.log(`URL not found for ${game}`);
   }
 }
 
-// Get the input element
+
 const searchInput = document.getElementById('searchInput');
 
-// Add event listener for input event on search input
+
 searchInput.addEventListener('input', function (event) {
   const inputValue = event.target.value.trim();
   if (inputValue) {
-    // Update search suggestions based on input value
+
     updateSearchSuggestions(inputValue);
   } else {
-    // Clear search suggestions if input is empty
+  
     document.getElementById('searchSuggestions').innerHTML = '';
   }
 });
@@ -89,7 +89,7 @@ searchInput.addEventListener('input', function (event) {
 function redirectSearch() {
   var searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
   if (searchInput !== "") {
-    // Define an object to map game names to their respective URLs
+    
     var gameUrls = {
       'Snake': 'https://snake-iota-nine.vercel.app/',
       'Rock Paper Scissors': 'https://rock-paper-game-eta.vercel.app/',
@@ -99,17 +99,15 @@ function redirectSearch() {
       'Word Scramble': 'https://word-scramble-url.com/'
     };
 
-    // Check if the search input matches any of the game names
+   
     for (var gameName in gameUrls) {
       if (searchInput === gameName.toLowerCase()) {
-        // Redirect the user to the corresponding game URL
+     
         window.location.href = gameUrls[gameName];
-        return; // Exit the function early if a match is found
+        return; 
       }
     }
 
-    // If no match is found, redirect to a generic search page or show an error message
-    // Replace 'YOUR_GENERIC_SEARCH_URL' with the URL of your generic search page
     window.location.href = 'http://127.0.0.1:3000/main_website/index.html?q=' + searchInput;
   }
 }
@@ -142,33 +140,31 @@ function scrollToAboutUs() {
 }
 
 function showRules(game) {
-  // Get the modal
+ 
   var modal = document.getElementById("myModal");
 
-  // Get the rules content element
+
   var rulesContent = document.getElementById("rules-content");
 
-  // Fetch the rules based on the selected game (you can replace this with your own logic)
+  
   var rules = getRules(game);
 
-  // Set the rules content in the modal
   rulesContent.textContent = rules;
 
-  // Display the modal
   modal.style.display = "block";
 }
 
-// Function to close the modal
+
 function closeModal() {
-  // Get the modal
+
   var modal = document.getElementById("myModal");
 
-  // Hide the modal
+l
   modal.style.display = "none";
 }
-// Function to get rules based on the selected game (replace this with your own logic)
+
 function getRules(game) {
-  // Example: returning hardcoded rules for different games
+
   switch (game) {
     case "snake":
       return " The player controls a snake that moves around a game board. The goal is to eat as many balls as possible without colliding with the walls of the game board or the snake's own body."

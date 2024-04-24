@@ -26,7 +26,7 @@ body {
   border-radius: 3px;
   transform: translate(-50%, -50%);
 
-  background-image: linear-gradient(to top right, #585e0d, #24a335);
+  background-image: linear-gradient(to top right, #b5c01f, #24a335);
 }
 
 .container .ear {
@@ -272,9 +272,7 @@ body {
   border-radius: 10px;
   font-size: 1rem;
 }
-/* .container .fa-user {
-  font-size: 1.3rem;
-} */
+
 .container .login input {
   padding: 0 50px 0 0px;
   margin: 5px 0;
